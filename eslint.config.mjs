@@ -11,7 +11,7 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default [
+const config = [
   ...compat.extends(
     "next/core-web-vitals",
     "next/typescript",
@@ -24,4 +24,13 @@ export default [
       "no-undef": "off",
     },
   },
+  {
+    settings: {
+      "better-tailwindcss": {
+        entryPoint: "app/globals.css",
+      },
+    },
+  },
 ];
+
+export default config;
