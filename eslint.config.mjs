@@ -11,17 +11,27 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default [
+const config = [
   ...compat.extends(
     "next/core-web-vitals",
     "next/typescript",
-    "standard",
     // "plugin:tailwindcss/recommended",
-    "prettier"
+    "prettier",
+    "plugin:better-tailwindcss/recommended"
   ),
+  {
+    settings: {
+      "better-tailwindcss": {
+        entryPoint: "app/globals.css",
+      },
+    },
+  },
   {
     rules: {
       "no-undef": "off",
+      "better-tailwindcss/multiline": "off",
     },
   },
 ];
+
+export default config;

@@ -12,7 +12,7 @@ import {
 export default function Home() {
   return (
     <>
-      <h1 className="text-3xl mx-2 my-2">Hi, Welcome to Next.js</h1>
+      <h1 className="mx-2 my-2 text-3xl">Hi, Welcome to Next.js</h1>
       <div className="mx-2 my-2">
         <DropdownMenu>
           <DropdownMenuTrigger>Open</DropdownMenuTrigger>
