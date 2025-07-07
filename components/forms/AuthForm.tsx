@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { DefaultValues, FieldValues, Path, useForm } from "react-hook-form";
+import { DefaultValues, FieldValues, Path, SubmitHandler, useForm } from "react-hook-form";
 import { z, ZodType } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -35,7 +35,7 @@ const AuthForm = <T extends FieldValues>({
     defaultValues: defaultValues as DefaultValues<T>,
   });
 
-  const handleSubmit = async () => {
+  const handleSubmit : SubmitHandler<T> = async () => {
     console.log("Form submitted");
   };
     /*const hasErrors = Object.keys(form.formState.errors).length > 0;
