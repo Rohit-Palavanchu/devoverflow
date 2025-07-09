@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk as SpaceGrotesk, Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/context/Theme";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 
@@ -27,36 +27,42 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   const session = await auth();
   console.log(session);
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+      </head>
       <SessionProvider session={session}>
-      <body
-        className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+        <body
+          className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
         >
-          {children}
-        </ThemeProvider>
-        <Toaster
-        position="bottom-left"
-        richColors
-        closeButton
-        toastOptions={{
-          className: "bg-dark400_light900 text-dark200_light800",
-          style: {
-            fontFamily: "var(--font-geist-sans)",
-            fontSize: "15px",
-          },
-        }}
-      />
-      </body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+          <Toaster
+            position="bottom-left"
+            richColors
+            closeButton
+            toastOptions={{
+              className: "bg-dark400_light900 text-dark200_light800",
+              style: {
+                fontFamily: "var(--font-geist-sans)",
+                fontSize: "15px",
+              },
+            }}
+          />
+        </body>
       </SessionProvider>
     </html>
   );
