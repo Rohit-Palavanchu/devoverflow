@@ -31,7 +31,15 @@ const RightSideBar = () => {
             return (
               <Link key={_id} href={Routes.PROFILE(_id)}>
                 <div className="flex cursor-pointer items-center justify-between gap-4">
-                  <p className="body-medium text-dark500_light700">{title}</p>
+                  <div className="flex items-center gap-4">
+                    <Image
+                      src="/icons/question.svg"
+                      width={20}
+                      height={20}
+                      alt="question-icon"
+                    />
+                    <p className="body-medium text-dark500_light700">{title}</p>
+                  </div>
                   <Image
                     src="/icons/chevron-right.svg"
                     width={20}
@@ -47,10 +55,17 @@ const RightSideBar = () => {
       <div className="mt-10">
         <h3 className="h3-bold text-dark200_light900">Popular Tags</h3>
         <div className="mt-7 flex flex-col gap-4">
-          {popularTags.map((tag)=>{
+          {popularTags.map((tag) => {
             const { _id, name, questions } = tag;
             return (
-              <TagCards key={_id} _id={_id} name={name} questions={questions} showCount compact />
+              <TagCards
+                key={_id}
+                _id={_id}
+                name={name}
+                questions={questions}
+                showCount
+                compact
+              />
             );
           })}
         </div>
