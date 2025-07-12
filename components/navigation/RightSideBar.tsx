@@ -37,6 +37,7 @@ const RightSideBar = () => {
                       width={20}
                       height={20}
                       alt="question-icon"
+                      className="invert-colors"
                     />
                     <p className="body-medium text-dark500_light700">{title}</p>
                   </div>
