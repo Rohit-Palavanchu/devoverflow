@@ -1,3 +1,4 @@
+import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,12 @@ const questions = [
       { _id: "1", name: "React" },
       { _id: "2", name: "JavaScript" },
     ],
-    author: { _id: "1", name: "John Doe" },
+    author: {
+      _id: "1",
+      name: "John Doe",
+      image:
+        "https://static.vecteezy.com/system/resources/previews/002/002/403/non_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
+    },
     upvotes: 10,
     answers: 5,
     views: 100,
@@ -27,7 +33,12 @@ const questions = [
       { _id: "1", name: "React" },
       { _id: "2", name: "JavaScript" },
     ],
-    author: { _id: "1", name: "John Doe" },
+    author: {
+      _id: "1",
+      name: "John Doe",
+      image:
+        "https://static.vecteezy.com/system/resources/previews/002/002/403/non_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
+    },
     upvotes: 10,
     answers: 5,
     views: 100,
@@ -40,8 +51,10 @@ interface SearchParams {
 }
 
 export default async function Home({ searchParams }: SearchParams) {
-  const {query=""} = await searchParams;
-  const filteredQuestions = questions.filter((i)=>i.title.toLowerCase().includes(query))
+  const { query = "" } = await searchParams;
+  const filteredQuestions = questions.filter((i) =>
+    i.title.toLowerCase().includes(query)
+  );
   return (
     <>
       <section className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -62,11 +75,11 @@ export default async function Home({ searchParams }: SearchParams) {
         />
       </div>
       <div className="mt-10">
-        <HomeFilter/>
+        <HomeFilter />
       </div>
       <div className="mt-10 flex w-full flex-col gap-6">
         {filteredQuestions.map((question) => (
-          <h1 key={question._id}>{question.title}</h1>
+          <QuestionCard key={question._id} question={question} />
         ))}
       </div>
     </>

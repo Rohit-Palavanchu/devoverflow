@@ -10,7 +10,7 @@ import React from "react";
 
 const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
   const pathname = usePathname();
-  const userId = 1;
+  const userId = "1";
 
   return (
     <>

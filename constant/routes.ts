@@ -2,8 +2,9 @@ const Routes = {
   HOME: "/",
   SIGN_IN: "/sign-in",
   SIGN_UP: "/sign-up",
-  PROFILE: (_id:number) => `/profile/${_id}`,
+  PROFILE: (_id:string) => `/profile/${_id}`,
   TAGS: (id:string) => `/tags/${id}`,
   ASK_QUESTION: "/ask-question",
+  QUESTION:(_id:string)=> `/question/${_id}`
 };
 export default Routes;
