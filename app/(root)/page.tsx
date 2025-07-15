@@ -1,3 +1,4 @@
+import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import Routes from "@/constant/routes";
@@ -60,7 +61,9 @@ export default async function Home({ searchParams }: SearchParams) {
           route={Routes.HOME}
         />
       </div>
-      Home Filter
+      <div className="mt-10">
+        <HomeFilter/>
+      </div>
       <div className="mt-10 flex w-full flex-col gap-6">
         {filteredQuestions.map((question) => (
           <h1 key={question._id}>{question.title}</h1>
