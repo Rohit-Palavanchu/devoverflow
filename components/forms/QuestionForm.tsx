@@ -45,7 +45,7 @@ const QuestionForm = () => {
                 Be specific and imagine you&apos;re asking a question to another
                 person.
               </FormDescription>
-              <FormMessage />
+              <FormMessage className="text-[12px] font-bold text-red-600" />
             </FormItem>
           )}
         />
@@ -63,7 +63,7 @@ const QuestionForm = () => {
                 Introduce the problem and expand on what you&apos;ve put in the
                 title.
               </FormDescription>
-              <FormMessage />
+              <FormMessage className="text-[12px] font-bold text-red-600" />
             </FormItem>
           )}
         />
@@ -89,7 +89,7 @@ const QuestionForm = () => {
                 Add up to 3 tags to describe what your question is about. You
                 need to press enter to add a tag.
               </FormDescription>
-              <FormMessage />
+              <FormMessage className="text-[12px] font-bold text-red-600" />
             </FormItem>
           )}
         />
