@@ -5,12 +5,12 @@ import React from "react";
 import Routes from "@/constant/routes";
 import TagCards from "../cards/TagCards";
 
-const topQuestions: { _id: number; title: string }[] = [
-  { _id: 1, title: "How to create a custom hook in React" },
-  { _id: 2, title: "What is the difference between useState and useReducer?" },
-  { _id: 3, title: "How to use useEffect hook in React?" },
-  { _id: 4, title: "What is the purpose of useMemo and useCallback hooks?" },
-  { _id: 5, title: "How to handle forms in React?" },
+const topQuestions: { _id: string; title: string }[] = [
+  { _id: "1", title: "How to create a custom hook in React" },
+  { _id: "2", title: "What is the difference between useState and useReducer?" },
+  { _id: "3", title: "How to use useEffect hook in React?" },
+  { _id: "4", title: "What is the purpose of useMemo and useCallback hooks?" },
+  { _id: "5", title: "How to handle forms in React?" },
 ];
 
 const popularTags = [
